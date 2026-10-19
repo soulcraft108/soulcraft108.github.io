@@ -1,0 +1,30 @@
+/* Soulcraft108 site: one calm reading column. Colors from config/shop_profile.yaml (patina, linen, ink). */
+:root {
+  --bg: #F4EFE6; --paper: #FFFFFF; --ink: #1F2A30; --muted: #5F6C70; --accent: #4E7A78; --rule: #DCE6E0;
+  --display: Georgia, "Times New Roman", serif;
+  --body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161D20; --paper: #1E272B; --ink: #E8E4DC; --muted: #A9B4B6; --accent: #8FBDBA; --rule: #2E3A3E;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #161D20; --paper: #1E272B; --ink: #E8E4DC; --muted: #A9B4B6; --accent: #8FBDBA; --rule: #2E3A3E;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.65 var(--body); padding: 40px 16px; }
+main { max-width: 680px; margin: 0 auto; background: var(--paper); border-radius: 12px; padding: 32px clamp(20px, 5vw, 44px); }
+nav { max-width: 680px; margin: 0 auto 16px; font-size: 14px; display: flex; gap: 20px; flex-wrap: wrap; }
+h1 { font: italic 400 clamp(28px, 6vw, 38px)/1.15 var(--display); margin: 0 0 6px; text-wrap: balance; }
+.meta { color: var(--muted); font-size: 14px; margin: 0 0 24px; }
+h2 { font: 600 13px/1.4 var(--body); text-transform: uppercase; letter-spacing: .08em; color: var(--accent);
+     margin: 28px 0 8px; padding-top: 18px; border-top: 1px solid var(--rule); }
+p, li { max-width: 65ch; margin: 0 0 10px; }
+ul { padding-left: 20px; margin: 0 0 10px; }
+a { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+footer { max-width: 680px; margin: 20px auto 0; color: var(--muted); font-size: 13px; }
